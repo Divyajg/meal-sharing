@@ -65,10 +65,12 @@ router.get("/", async(request, response) => {
     }
 
     if ('availableReservations' in request.query) {
-        const subquery = knex.select('*').from('reservations')
-        meals = meals.select("*")
-            .whereIn("id", subquery)
-            .having("meals.max_reservations", ">", "sum('reservations.number_of_guests')");
+        meals = meals
+            .select('meals.id', 'meals.max_reservations')
+            .leftJoin('reservations', { 'meals.id': 'reservations.meal_id' })
+            .count({ 'reservations': 'reservations.meal_id' })
+            .groupBy('meals.id')
+            .having(knex.raw('meals.max_reservations > reservations'));
     }
 
     if ('title' in request.query) {
