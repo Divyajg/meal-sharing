@@ -1,0 +1,95 @@
+* {
+    width: 100% auto;
+    padding: 10px;
+}
+
+header,
+nav,
+footer {
+    padding: 1em;
+}
+
+.logo {
+    border-radius: 15px;
+    border: 5px solid rgb(81, 81, 83);
+    padding: 0;
+}
+
+header {
+    color: rgb(54, 161, 40);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+hr.style1 {
+    padding: 0;
+    border: none;
+    border-top: medium solid #333;
+    color: #333;
+    text-align: center;
+}
+
+.upperCase,
+#title {
+    text-transform: uppercase;
+}
+
+#title {
+    font-size: 2em;
+    text-align: center;
+    color: brown;
+}
+
+#caption {
+    font-size: 0.5em;
+    text-transform: capitalize;
+}
+
+.capitalize {
+    font-size: small;
+    text-transform: capitalize;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+hr.style2 {
+    padding: 0;
+    border: none;
+    border-top: 2px solid rgb(145, 141, 141);
+    color: #333;
+    text-align: center;
+}
+
+footer>ul,
+nav>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pageInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pageInfo>ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+a:hover {
+    font-size: 1.5rem;
+}
+
+a:active {
+    text-decoration: underline red;
+}

@@ -1,3 +1,8 @@
 * {
     box-sizing: border-box;
 }
+
+.app {
+    border: 2px ridge gold;
+    border-radius: 5px;
+}
