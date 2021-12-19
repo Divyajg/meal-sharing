@@ -61,7 +61,7 @@ export default function HomePage(props) {
         </p>
       </section>
 
-      <div className="pageInfo">
+      <div className="aboutPage">
         <ul>
           <li>
             <a href="meal-sharing/about/">about us</a>

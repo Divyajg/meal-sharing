@@ -22,6 +22,10 @@ header {
     justify-content: space-between;
 }
 
+.mealsHeader {
+    justify-content: space-around;
+}
+
 hr.style1 {
     padding: 0;
     border: none;
@@ -72,18 +76,24 @@ nav>ul {
     justify-content: space-between;
 }
 
-.pageInfo {
+.aboutPage {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    text-transform: capitalize;
 }
 
-.pageInfo>ul {
+.aboutPage>ul {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     font-size: 1rem;
     font-weight: lighter;
+}
+
+.meals {
+    display: flex;
+    flex-direction: column;
 }
 
 a:hover {

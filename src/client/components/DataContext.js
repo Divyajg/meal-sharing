@@ -31,32 +31,3 @@ function ContextProvider({ children }) {
 
 export default DataContext;
 export { ContextProvider };
-/* const fetchMeals = async () => {
-    try {
-      //`/api/meals?title=${userInput}`
-      await fetch("/api/meals")
-        .then((response) => {
-          if (!response.ok) {
-            throw Error("cannot fetch the data from API");
-          } else {
-            return response.json();
-          }
-        })
-        .then((data) => {
-          setMeals(data);
-          setLoading(false);
-          console.log(data);
-        });
-    } catch (error) {
-      setError(error.message);
-    }
-  };
-  useEffect(() => {
-    if (error) {
-      setLoading(false);
-    } else {
-      setLoading(true);
-      fetchMeals();
-    }
-  }, [error]);
-  console.log(meals); */

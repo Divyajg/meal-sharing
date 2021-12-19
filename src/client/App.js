@@ -12,15 +12,15 @@ function App() {
   return (
     <Router className="app">
       <Switch>
-        <Route exact path="/meal-sharing" component={HomePage} />
-        <Route exact path="/meal-sharing/about" component={About} />
-        <Route exact path="/meal-sharing/meals" component={Meals} />
+        <Route exact path="/home" component={HomePage} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/meals" component={Meals} />
         <Route
           exact
-          path="/meal-sharing/reservations"
+          path="/reservations"
           component={Reservations}
         />
-        <Route exact path="/meal-sharing/reviews" component={Reviews} />
+        <Route exact path="/reviews" component={Reviews} />
         <ContextProvider>
           <Meals />
         </ContextProvider>
