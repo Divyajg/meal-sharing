@@ -5,12 +5,6 @@
     /*background-color: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);*/
 }
 
-#root {
-    padding-left: 10%;
-    padding-right: 10%;
-    height: 100vh;
-}
-
 body {
     margin: 0;
     font-size: 17px;
@@ -28,16 +22,13 @@ a {
     color: #2d3233;
 }
 
-@media screen and (max-width: 1400px) {
-    #root {
-        padding-left: 30%;
-        padding-right: 30%;
-    }
-}
+@media only screen and (max-width: 460px) {}
 
-@media screen and (max-width: 750px) {
-    #root {
-        padding-left: 0;
-        padding-right: 0;
+@media only screen and (min-width: 461px) and (max-width: 960px) {}
+
+@media only screen and (min-width: 961px) {
+    .homePage {
+        padding-left: 10%;
+        padding-right: 10%;
     }
 }

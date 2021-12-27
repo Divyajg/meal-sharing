@@ -4,39 +4,41 @@ import Footer from "./Footer";
 import "./componentStyle.css";
 import { Link } from "react-router-dom";
 
+
 function HomePage() {
   return (
     <div className="homePage">
       <Header />
-      <nav>
-        <ul>
-          <li className="upperCase">
-            <Link to="/about">About</Link>
-          </li>
-          <li className="upperCase">
+        <nav>
+          <ul>
+            <li className="upperCase">
+              <Link to="/about">About Now</Link>
+            </li>
+            <li className="upperCase">
             <Link to="/meals">Meals</Link>
-          </li>
-          <li className="upperCase">
-            <Link to="/reservations">reserve</Link>
-          </li>
-          <li className="upperCase">
+            </li>
+            <li className="upperCase">
+            <Link to="/reservations">reserve here</Link>
+            </li>
+            <li className="upperCase">
             <Link to="/reviews">reviews</Link>
-          </li>
-          <li className="upperCase">
-            <Link to="/about/#location">Locate</Link>
-          </li>
-          <li className="upperCase">
-            <Link to="/searchMeal">🔍search</Link>
-          </li>
-        </ul>
-      </nav>
+            </li>
+            <li className="upperCase">
+            <Link to="/about">Locate</Link>
+            </li>
+            <li className="upperCase">
+              <Link to="/searchMeal">🔍search</Link>
+            </li>
+          </ul>
+        </nav>
+     
 
       <section>
         <img
-          src="https://www.stephenconroy.com/images/GALLERYVIEW_575_MissSaigon_Hero_web.jpg"
+          src="https://parkhouse.com.au/wp-content/uploads/sites/6/2018/03/Hero-PHFL-Food-Merchants-House-Feast-e1557365216691.jpg"
           alt="FoodLove😋"
-          width="1150px"
-          height="500px"
+          width="100%"
+          height="49%"
         />
         <p>
           Meal-sharing is an application, where one can find the meals that are
@@ -50,7 +52,7 @@ function HomePage() {
       <div className="aboutPage">
         <ul>
           <li>
-            <Link to="/about">about us</Link>
+          <Link to="/about">about us</Link>
           </li>
           <li>our history</li>
           <li>values in action</li>
@@ -61,7 +63,7 @@ function HomePage() {
         </ul>
         <ul>
           <li>
-            <Link to="/about">careers</Link>
+          <Link to="/about">careers</Link>
           </li>
           <li>Education Opportunities</li>
           <li>employee perks</li>
@@ -69,7 +71,7 @@ function HomePage() {
         </ul>
         <ul>
           <li>
-            <Link to="/about">services</Link>
+          <Link to="/about">services</Link>
           </li>
           <li>wifi</li>
           <li>gift cards</li>
@@ -81,7 +83,7 @@ function HomePage() {
         </ul>
         <ul>
           <li>
-            <Link to="/about">community</Link>
+          <Link to="/about">community</Link>
           </li>
           <li>scholorships</li>
           <li>m s charities</li>
@@ -90,7 +92,7 @@ function HomePage() {
         </ul>
         <ul>
           <li>
-            <Link to="/about">contact us</Link>
+          <Link to="/about">contact us</Link>
           </li>
           <li>Gift Card FAQs</li>
           <li>Donations</li>
