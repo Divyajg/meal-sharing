@@ -1,51 +1,37 @@
 import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 import "./componentStyle.css";
+import { Link } from "react-router-dom";
 
-
-export default function HomePage(props) {
+function HomePage() {
   return (
     <div className="homePage">
-      <header>
-        <img
-          className="logo"
-          src="https://i.pinimg.com/736x/ca/d9/11/cad911eca761152a9eb515b5de8ae115--logo-ms-awesome-logos.jpg"
-          width="120px"
-          height="100px"
-          alt="MS-Logo"
-        />
-
-        <nav>
-          <ul>
-            <li className="upperCase">
-              <a href="meal-sharing/about">about</a>
-            </li>
-            <li className="upperCase">
-              <a href="meal-sharing/meals">our menu</a>
-            </li>
-            <li className="upperCase">
-              <a href="meal-sharing/reservations">reserve here</a>
-            </li>
-            <li className="upperCase">
-              <a href="meal-sharing/reviews">reviews</a>
-            </li>
-            <li className="upperCase">
-              <a href="meal-sharing/about">locate</a>
-            </li>
-            <li className="upperCase">
-              <a href="meal-sharing/about/">🔍search</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <hr className="style1" />
+      <Header />
+      <nav>
+        <ul>
+          <li className="upperCase">
+            <Link to="/about">About</Link>
+          </li>
+          <li className="upperCase">
+            <Link to="/meals">Meals</Link>
+          </li>
+          <li className="upperCase">
+            <Link to="/reservations">reserve</Link>
+          </li>
+          <li className="upperCase">
+            <Link to="/reviews">reviews</Link>
+          </li>
+          <li className="upperCase">
+            <Link to="/about/#location">Locate</Link>
+          </li>
+          <li className="upperCase">
+            <Link to="/searchMeal">🔍search</Link>
+          </li>
+        </ul>
+      </nav>
 
       <section>
-        <h1 id="title">
-          meal-sharing:{" "}
-          <span id="caption">
-            An exclusive place where food is our emotion.
-          </span>
-        </h1>
         <img
           src="https://www.stephenconroy.com/images/GALLERYVIEW_575_MissSaigon_Hero_web.jpg"
           alt="FoodLove😋"
@@ -64,7 +50,7 @@ export default function HomePage(props) {
       <div className="aboutPage">
         <ul>
           <li>
-            <a href="meal-sharing/about/">about us</a>
+            <Link to="/about">about us</Link>
           </li>
           <li>our history</li>
           <li>values in action</li>
@@ -75,7 +61,7 @@ export default function HomePage(props) {
         </ul>
         <ul>
           <li>
-            <a href="meal-sharing/about/">careers</a>
+            <Link to="/about">careers</Link>
           </li>
           <li>Education Opportunities</li>
           <li>employee perks</li>
@@ -83,7 +69,7 @@ export default function HomePage(props) {
         </ul>
         <ul>
           <li>
-            <a href="meal-sharing/about/">services</a>
+            <Link to="/about">services</Link>
           </li>
           <li>wifi</li>
           <li>gift cards</li>
@@ -95,7 +81,7 @@ export default function HomePage(props) {
         </ul>
         <ul>
           <li>
-            <a href="meal-sharing/about/">community</a>
+            <Link to="/about">community</Link>
           </li>
           <li>scholorships</li>
           <li>m s charities</li>
@@ -104,7 +90,7 @@ export default function HomePage(props) {
         </ul>
         <ul>
           <li>
-            <a href="meal-sharing/about/">contact us</a>
+            <Link to="/about">contact us</Link>
           </li>
           <li>Gift Card FAQs</li>
           <li>Donations</li>
@@ -113,71 +99,8 @@ export default function HomePage(props) {
           <li>Frequently Asked Questions</li>
         </ul>
       </div>
-      <footer>
-        <div className="socialMedia">
-          <ul>
-            <li>
-              <a href="https://facebook.com/meal-sharing_dj">
-                <img
-                  src="https://img.icons8.com/fluency/50/000000/facebook.png"
-                  alt="facebook!"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/meal-sharing_dj">
-                <img
-                  src="https://img.icons8.com/color/50/000000/twitter-squared.png"
-                  alt="twitter!"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://instagram.com/meal-sharing_dj">
-                <img
-                  src="https://img.icons8.com/fluency/50/000000/instagram-new.png"
-                  alt="instagram!"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://yahoo.com/meal-sharing_dj">
-                <img
-                  src="https://img.icons8.com/doodle/48/000000/yahoo--v1.png"
-                  alt="yahoo!"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://google.com/meal-sharing_dj">
-                <img
-                  src="https://img.icons8.com/fluency/48/000000/google-logo.png"
-                  alt="google!"
-                />
-              </a>
-            </li>
-          </ul>
-        </div>
-        <hr className="style2" />
-        <ul>
-          <li className="capitalize">
-            <a href="meal-sharing/about">accessibility</a>
-          </li>
-          <li className="capitalize">
-            <a href="meal-sharing/about">privacy</a>
-          </li>
-          <li className="capitalize">
-            <a href="meal-sharing/about">terms & onditions</a>
-          </li>
-          <li className="capitalize">
-            <a href="meal-sharing/about">do not sell my personal information</a>
-          </li>
-          <li className="capitalize">
-            <a href="meal-sharing/about">cookie settings</a>
-          </li>
-          <li className="capitalize">@copyRights.meal_sharing_dj</li>
-        </ul>
-      </footer>
+      <Footer />
     </div>
   );
 }
+export default HomePage;

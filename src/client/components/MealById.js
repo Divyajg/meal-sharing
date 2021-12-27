@@ -1,24 +1,21 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useParams } from "react-router-dom";
 import DataContext from "./DataContext";
 
-export default function Reservations() {  
-
-  const { reservations, loading, error } = useContext(DataContext);
-  if (loading) return <h3>Loading...</h3>;
-  if (error) return <p>{error}</p>;
-
+export default function MealById() {
+  const { newMeals } = useContext(DataContext);
+  const { id } = useParams();
   const [inputState, setInputstate] = useState(false);
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [numberOfGuests, setNumberOfGuests] = useState("");
   const [email, setEmail] = useState("");
-  const [mealId, setMealId] = useState("");
   const [date, setDate] = useState("");
 
   function newReservation() {
-    
+    {
       if (email !== "") {
         setInputstate(true);
         fetch("/api/reservations", {
@@ -28,7 +25,7 @@ export default function Reservations() {
             contact_name: name,
             contact_phonenumber: phoneNumber,
             contact_email: email,
-            meal_id: mealId,
+            meal_id: id,
             number_of_guests: numberOfGuests,
             created_date: date,
           }),
@@ -42,29 +39,27 @@ export default function Reservations() {
             alert("Your Reservation has been saved. Enjoy the Experience.");
           });
       }
-    
+    }
   }
-
+  const mealById = newMeals.find((meal) => meal.id === parseInt(id));
+  console.log({mealById});
   return (
     <div>
       <Header />
-<h4>Please provide your reservation ID and a valid 🆔 proof. </h4>
-<p>Active reservations:</p>
-      <ol className="reservations">
-        {!reservations || reservations.length === 0 ? (
-          <li>No reservations</li>
+      <h1>Meal with id: {id}</h1>
+
+      <ul className="meals">
+        {!mealById ? (
+          <li>No Meals available</li>
         ) : (
-          reservations.map((reservation) => {
-            return (
-              <li key={reservation.id}>
-                <span className="underline">Reserved for: </span> {reservation.contact_name} <br />
-                <span className="underline">Reserved on: </span>{reservation.created_date} <br />
+              <li key={mealById.id}>
+               <span className="underline"> Meal: </span>{mealById.title} <br />
+               <span className="underline">Meal Described: </span>{mealById.description} <br />
+               <span className="underline">Meal Price: {mealById.price} </span><br />
+               <span className="underline">Available Seats: {mealById.availableSeats} </span><br />
               </li>
-            );
-          })
         )}
-      </ol>
-<p>Reserve your meal and space here ⏬ </p>
+      </ul>
       <div className="inputForm">
         <label>
           Contact Name:{" "}
@@ -98,18 +93,6 @@ export default function Reservations() {
             type="text"
             defaultValue={""}
             placeholder="Email@domain.com"
-            required
-          />{" "}
-        </label>{" "}
-        <br />
-        <label>
-          Meal Id:
-          <input
-            onChange={(e) => setMealId(e.target.value)}
-            className="addMargin"
-            type="text"
-            defaultValue={""}
-            placeholder="Your Choice of Meal"
             required
           />{" "}
         </label>{" "}
