@@ -51,18 +51,6 @@ return (
         <hr className="style2" />
         <ul>
           <li className="capitalize">
-            <Link to ="/about">accessibility</Link>
-          </li>
-          <li className="capitalize">
-          <Link to ="/about">privacy</Link>
-          </li>
-          <li className="capitalize">
-          <Link to ="/about">terms & onditions</Link>
-          </li>
-          <li className="capitalize">
-          <Link to ="/about">do not sell my personal information</Link>
-          </li>
-          <li className="capitalize">
           <Link to ="/about">cookie settings</Link>
           </li>
           <li className="capitalize">@copyRights.meal_sharing_dj</li>

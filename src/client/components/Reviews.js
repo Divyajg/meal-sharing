@@ -14,14 +14,14 @@ export default function Reviews() {
       <Header />
       <h2>Reviews</h2>
 
-      <ol className="reviews">
+      <ol className="mealBorder">
         {!reviews || reviews.length === 0 ? (
           <li>No reviews</li>
         ) : (
           reviews.map((review) => {
             return (
               <li key={review.id}>
-                <span className="underline">Meal ID: </span> {review.meal_id} <br />
+                <span className="underline boldFont">Meal ID: </span> {review.meal_id} <br />
                 <span className="underline">Stars: </span>{review.stars} <br />
                 <span className="underline">Title: </span>{review.title} <br />
                 <span className="underline">Description: </span>{review.description}
@@ -30,7 +30,9 @@ export default function Reviews() {
           })
         )}
       </ol>
-      <Link to="/reviews/addReview">Add Review Here</Link>
+      <Link to="/reviews/addReview">
+            <button>Add a review Here</button>
+          </Link>
 
       <Footer />
     </div>

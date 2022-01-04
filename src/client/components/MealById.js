@@ -12,7 +12,7 @@ export default function MealById() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [numberOfGuests, setNumberOfGuests] = useState("");
   const [email, setEmail] = useState("");
-  const [date, setDate] = useState("");
+  //const [date, setDate] = useState("");
 
   function newReservation() {
     {
@@ -27,7 +27,7 @@ export default function MealById() {
             contact_email: email,
             meal_id: id,
             number_of_guests: numberOfGuests,
-            created_date: date,
+            //created_date: date,
           }),
         })
           .catch((e) => {
@@ -46,20 +46,22 @@ export default function MealById() {
   return (
     <div>
       <Header />
+      <div>
       <h1>Meal with id: {id}</h1>
 
-      <ul className="meals">
+     
         {!mealById ? (
-          <li>No Meals available</li>
+          <h4>No Meals available</h4>
         ) : (
-              <li key={mealById.id}>
-               <span className="underline"> Meal: </span>{mealById.title} <br />
-               <span className="underline">Meal Described: </span>{mealById.description} <br />
-               <span className="underline">Meal Price: {mealById.price} </span><br />
-               <span className="underline">Available Seats: {mealById.availableSeats} </span><br />
-              </li>
+              <h4 key={mealById.id}  className="mealBorder">
+               <span> Meal: </span>{mealById.title} <br />
+               <span>Meal Described: </span>{mealById.description} <br />
+               <span>Event on: {mealById.when_date} </span><br />
+               <span>Meal Price: {mealById.price} </span><br />
+               <span>Available Seats: {mealById.availableSeats} </span><br />
+              </h4>
         )}
-      </ul>
+      
       <div className="inputForm">
         <label>
           Contact Name:{" "}
@@ -80,7 +82,7 @@ export default function MealById() {
             className="addMargin"
             type="int"
             defaultValue={""}
-            placeholder="Description"
+            placeholder="Phone number"
             required
           />{" "}
         </label>{" "}
@@ -104,12 +106,12 @@ export default function MealById() {
             className="addMargin"
             type="int"
             defaultValue={""}
-            placeholder="Reservations"
+            placeholder="Max available"
             required
           />{" "}
         </label>{" "}
         <br />
-        <label>
+        {/* <label>
           Reserve On:{" "}
           <input
             onChange={(e) => setDate(e.target.value)}
@@ -119,9 +121,10 @@ export default function MealById() {
             placeholder="Date"
             required
           />{" "}
-        </label>
+        </label> */}
         <br />
         <button onClick={newReservation}>Submit</button>
+      </div>
       </div>
       <Footer />
     </div>

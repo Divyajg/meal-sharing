@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "./images/Logo.png"
 
 export default function Header(){
 return (
@@ -8,7 +9,7 @@ return (
         <Link to="/">
       <img
           className="logo"
-          src="https://i.pinimg.com/736x/ca/d9/11/cad911eca761152a9eb515b5de8ae115--logo-ms-awesome-logos.jpg"
+          src={logo}
           width="120px"
           height="100px"
           alt="MS-Logo"

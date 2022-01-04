@@ -1,114 +1,149 @@
-    * {
-        width: 100% auto;
-        padding: 10px;
-    }
-    
-    header,
-    nav,
-    footer {
-        padding: 1em;
-    }
-    
-    .underline {
-        font-weight: bold;
-    }
-    
-    .logo {
-        border-radius: 15px;
-        border: 5px solid rgb(81, 81, 83);
-        padding: 0;
-    }
-    
-    .header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
-    hr.style1 {
-        padding: 0;
-        border: none;
-        border-top: medium solid #333;
-        color: #333;
-        text-align: center;
-    }
-    
-    .upperCase,
-    #title {
-        text-transform: uppercase;
-    }
-    
-    #title {
-        font-size: 2em;
-        text-align: center;
-        color: brown;
-    }
-    
-    #caption {
-        font-size: 0.5em;
-        text-transform: capitalize;
-    }
-    
-    .capitalize {
-        font-size: small;
-        text-transform: capitalize;
-    }
-    
-    ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-    
-    hr.style2 {
-        padding: 0;
-        border: none;
-        border-top: 2px solid rgb(145, 141, 141);
-        color: #333;
-        text-align: center;
-    }
-    
-    footer>ul,
-    nav>ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
-    .aboutPage {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        text-transform: capitalize;
-    }
-    
-    .aboutPage>ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        font-size: 1rem;
-        font-weight: lighter;
-    }
-    
-    .meals {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    button {
-        background-color: rgb(243, 220, 201);
-    }
-    
-    button,
-    input {
-        border-radius: 1em;
-        margin: 1.2em;
-    }
-    
-    a:hover {
-        font-size: 1.5rem;
-    }
-    
-    a:active {
-        text-decoration: underline red;
-    }
+* {
+    width: 100% auto;
+    padding: 10px;
+}
+
+header,
+nav,
+footer {
+    padding: 1em;
+}
+
+.flex2 {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row nowrap;
+    margin: 1em;
+}
+
+.logo {
+    border-radius: 5px;
+    padding: 0;
+}
+
+.border {
+    border: 1px solid brown;
+    border-radius: 1em;
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+ol {
+    list-style-type: none;
+}
+
+.mealBorder {
+    border: 1px solid brown;
+    margin: 2em;
+}
+
+.boldFont {
+    font-weight: bold;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+hr.style1 {
+    padding: 0;
+    border: none;
+    border-top: medium solid #333;
+    color: #333;
+    text-align: center;
+}
+
+.upperCase,
+#title,
+.title {
+    text-transform: uppercase;
+    color: brown;
+    font-weight: bold;
+}
+
+#title {
+    font-size: 2em;
+    text-align: center;
+}
+
+#caption {
+    font-size: 0.5em;
+    text-transform: capitalize;
+}
+
+.capitalize {
+    font-size: small;
+    text-transform: capitalize;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+hr.style2 {
+    padding: 0;
+    border: none;
+    border-top: 2px solid rgb(145, 141, 141);
+    color: #333;
+    text-align: center;
+}
+
+footer>ul,
+nav>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.aboutPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+.aboutPage>ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.padding {
+    margin-left: 2em;
+}
+
+.meals {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    background-color: rgb(243, 220, 201);
+}
+
+button,
+input {
+    border-radius: 1em;
+    margin: 1.2em;
+}
+
+a {
+    color: rgb(23, 122, 23);
+    font-weight: bolder;
+}
+
+a:hover {
+    font-size: 1.5rem;
+}
+
+a:active {
+    text-decoration: underline red;
+}

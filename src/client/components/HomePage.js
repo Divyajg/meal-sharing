@@ -12,13 +12,13 @@ function HomePage() {
         <nav>
           <ul>
             <li className="upperCase">
-              <Link to="/about">About Now</Link>
+              <Link to="/about">About</Link>
             </li>
             <li className="upperCase">
             <Link to="/meals">Meals</Link>
             </li>
             <li className="upperCase">
-            <Link to="/reservations">reserve here</Link>
+            <Link to="/reservations">reservations</Link>
             </li>
             <li className="upperCase">
             <Link to="/reviews">reviews</Link>
@@ -40,7 +40,7 @@ function HomePage() {
           width="100%"
           height="49%"
         />
-        <p>
+        <p className="text">
           Meal-sharing is an application, where one can find the meals that are
           available to enjoy, find the reservations about the availability, can
           look into the experience of others through reviews, make reservations
@@ -51,26 +51,16 @@ function HomePage() {
 
       <div className="aboutPage">
         <ul>
-          <li>
+          <li className="title">
           <Link to="/about">about us</Link>
           </li>
           <li>our history</li>
-          <li>values in action</li>
-          <li>leadership team</li>
-          <li>investor relations</li>
           <li>news & notifications</li>
           <li>franchise info</li>
         </ul>
+        
         <ul>
-          <li>
-          <Link to="/about">careers</Link>
-          </li>
-          <li>Education Opportunities</li>
-          <li>employee perks</li>
-          <li>working with us</li>
-        </ul>
-        <ul>
-          <li>
+          <li className="title">
           <Link to="/about">services</Link>
           </li>
           <li>wifi</li>
@@ -82,7 +72,7 @@ function HomePage() {
           <li>rewards</li>
         </ul>
         <ul>
-          <li>
+          <li className="title">
           <Link to="/about">community</Link>
           </li>
           <li>scholorships</li>
@@ -91,13 +81,13 @@ function HomePage() {
           <li>MS international</li>
         </ul>
         <ul>
-          <li>
+          <li className="title">
           <Link to="/about">contact us</Link>
           </li>
           <li>Gift Card FAQs</li>
           <li>Donations</li>
           <li>Employment</li>
-          <li>Restaurant Feedback</li>
+          <li>Feedback</li>
           <li>Frequently Asked Questions</li>
         </ul>
       </div>
