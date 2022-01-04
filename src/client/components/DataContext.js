@@ -45,10 +45,10 @@ function ContextProvider({ children }) {
   }, []);
 
   const newMeals = meals.map((meal)=>{
-    let temp = availableReservations.find(element=> element.id === meal.id)
-    if(temp.max_reservations) {
+    let temp = availableReservations.find(reservation=> reservation.id === meal.id)
+    if(temp) {
       meal.reservations=temp.reservations;
-      meal.availableSeats = temp.max_reservations-temp.reservations;
+      meal.availableSeats = meal.max_reservations-meal.reservations;
     }
     return meal;
   }) 
