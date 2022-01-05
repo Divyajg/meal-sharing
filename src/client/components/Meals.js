@@ -23,11 +23,13 @@ export default function Meals() {
                 <li key={meal.id} className="mealBorder">
                   <span className="underline">Meal: </span>
                   {meal.title} <br />
-                  <span className="underline"> Meal Described:</span>{" "}
+                  <span className="underline"> Meal Id:</span>{" "}
+                  {meal.id} <br />
+                  <span className="underline"> Described:</span>{" "}
                   {meal.description} <br />
-                  <span className="underline"> Meal Price: </span>
+                  <span className="underline"> Price: </span>
                   {meal.price} <br />
-                  <span className="underline"> Available Seats: </span>
+                  <span className="underline"> Available: </span>
                   {meal.availableSeats} <br />
                   <Link to={`/meals/${meal.id}`}>
                     <button>Click to reserve this meal</button>{" "}

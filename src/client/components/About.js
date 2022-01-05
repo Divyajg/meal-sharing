@@ -111,11 +111,9 @@ export default function About() {
             <h2 id="contact">
               <a>Contact US</a>
             </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.
-            </p>
+            <p>Phone: +10 52146325</p>
+            <p>Email: meal_sharing@dj.com</p>
+            <p>Address: Lille Elmevej 43 <br/> Valby-2400 </p>
           </div>
           <div className="border">
             <h2 id="location">
