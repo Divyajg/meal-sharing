@@ -52,7 +52,8 @@ function ContextProvider({ children }) {
     }
     return meal;
   }) 
-
+console.log(newMeals);
+console.log(availableReservations);
   return (
     <DataContext.Provider
       value={{

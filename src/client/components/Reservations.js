@@ -48,7 +48,7 @@ export default function Reservations() {
       <h4 className="padding">Please provide your reservation ID and a valid 🆔 proof. </h4>
       <div className="flex2">
         <div className="border">
-          <p className="boldFont">Active reservations:</p>
+          <p className="boldFont centerAlign">Active reservations:</p>
           <ol>
             {!reservations || reservations.length === 0 ? (
               <li>No reservations</li>
@@ -65,8 +65,8 @@ export default function Reservations() {
           </ol>
         </div>
         <div className="border">
-          <p className="boldFont">Reserve your meal and space here ⏬ </p>
-          <div className="reserveInputForm">
+          <p className="boldFont centerAlign">Reserve your meal and space here ⏬ </p>
+          <div className="inputFormReserve">
             <label>
               Contact Name:{" "}
               <input
@@ -139,7 +139,7 @@ export default function Reservations() {
               />{" "}
             </label>
             <br />
-            <button onClick={newReservation}>Submit</button>
+            <button onClick={newReservation} className="centerAlign">Submit</button>
           </div>
         </div>
       </div>

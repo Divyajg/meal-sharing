@@ -16,7 +16,7 @@ return (
         />
         </Link>
         <h1 id="title">
-          meal-sharing:{" "}
+          meal-sharing{" "}
           <span id="caption">
             An exclusive place where food is an emotion.
           </span>

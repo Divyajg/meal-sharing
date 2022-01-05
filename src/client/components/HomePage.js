@@ -23,12 +23,7 @@ function HomePage() {
             <li className="upperCase">
             <Link to="/reviews">reviews</Link>
             </li>
-            <li className="upperCase">
-            <Link to="/about">Locate</Link>
-            </li>
-            <li className="upperCase">
-              <Link to="/searchMeal">🔍search</Link>
-            </li>
+            
           </ul>
         </nav>
      
@@ -50,7 +45,7 @@ function HomePage() {
       </section>
 
       <div className="aboutPage">
-        <ul>
+        <ul className="listBlock">
           <li className="title">
           <Link to="/about">about us</Link>
           </li>
@@ -59,7 +54,7 @@ function HomePage() {
           <li>franchise info</li>
         </ul>
         
-        <ul>
+        <ul className="listBlock">
           <li className="title">
           <Link to="/about">services</Link>
           </li>
@@ -71,7 +66,7 @@ function HomePage() {
           <li>family fun</li>
           <li>rewards</li>
         </ul>
-        <ul>
+        <ul className="listBlock">
           <li className="title">
           <Link to="/about">community</Link>
           </li>
@@ -80,7 +75,7 @@ function HomePage() {
           <li>community info</li>
           <li>MS international</li>
         </ul>
-        <ul>
+        <ul className="listBlock">
           <li className="title">
           <Link to="/about">contact us</Link>
           </li>

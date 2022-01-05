@@ -45,7 +45,7 @@ export default function AddMeal() {
       <Header />
       <div className="inputForm">
         <label>
-          Meal Title:{" "}
+          Title:{" "}
           <input
             onChange={(e) => setTitle(e.target.value)}
             className="addMargin"
@@ -57,7 +57,7 @@ export default function AddMeal() {
         </label>{" "}
         <br />
         <label>
-          Meal Description:{" "}
+          Describe:{" "}
           <input
             onChange={(e) => setDescription(e.target.value)}
             className="addMargin"
@@ -69,7 +69,7 @@ export default function AddMeal() {
         </label>{" "}
         <br />
         <label>
-          Meal Location:{" "}
+          Location:{" "}
           <input
             onChange={(e) => setLocation(e.target.value)}
             className="addMargin"
@@ -93,7 +93,7 @@ export default function AddMeal() {
         </label>{" "}
         <br />
         <label>
-          Maximum reservations:{" "}
+          Max reservations:{" "}
           <input
             onChange={(e) => setReservations(e.target.value)}
             className="addMargin"
@@ -105,7 +105,7 @@ export default function AddMeal() {
         </label>{" "}
         <br />
         <label>
-          Meal Price:{" "}
+          Price:{" "}
           <input
             onChange={(e) => setPrice(e.target.value)}
             className="addMargin"
@@ -117,7 +117,7 @@ export default function AddMeal() {
         </label>{" "}
         <br />
         <label>
-          Created Date:{" "}
+          Created On:{" "}
           <input
             onChange={(e) => setDate(e.target.value)}
             className="addMargin"

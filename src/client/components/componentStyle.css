@@ -49,12 +49,13 @@ ol {
     justify-content: space-between;
 }
 
-hr.style1 {
+.style1 {
     padding: 0;
     border: none;
     border-top: medium solid #333;
     color: #333;
     text-align: center;
+    width: 100%;
 }
 
 .upperCase,
@@ -63,6 +64,20 @@ hr.style1 {
     text-transform: uppercase;
     color: brown;
     font-weight: bold;
+}
+
+.inputForm {
+    text-align: right;
+    margin-right: 20%;
+}
+
+.inputFormReserve {
+    text-align: right;
+    margin-right: 10%;
+}
+
+.centerAlign {
+    text-align: center;
 }
 
 #title {
@@ -86,7 +101,7 @@ ul {
     justify-content: flex-end;
 }
 
-hr.style2 {
+.style2 {
     padding: 0;
     border: none;
     border-top: 2px solid rgb(145, 141, 141);
@@ -94,11 +109,27 @@ hr.style2 {
     text-align: center;
 }
 
-footer>ul,
+.border {
+    width: 80%;
+}
+
+.socialMedia>ul {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+footer>ul {
+    display: flex;
+    justify-content: space-between;
+}
+
 nav>ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    font-size: 1.3rem;
 }
 
 .aboutPage {
@@ -106,6 +137,11 @@ nav>ul {
     flex-direction: row;
     justify-content: space-between;
     text-transform: capitalize;
+}
+
+.listBlock {
+    margin: 1em;
+    display: flex;
 }
 
 .aboutPage>ul {
@@ -135,13 +171,58 @@ input {
     margin: 1.2em;
 }
 
+@media only screen and (max-width: 700px) {
+    .header,
+    .aboutPage {
+        display: block;
+        text-align: center;
+    }
+    .homePage>nav>ul {
+        display: block;
+        text-align: center;
+    }
+    .socialMedia>ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    body {
+        background-color: rgb(232, 243, 217);
+    }
+    .flex2 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .inputForm {
+        text-align: left;
+    }
+    .inputFormReserve {
+        text-align: left;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .inputFormReserve {
+        text-align: left;
+        margin: 4% 0 10% 0;
+    }
+}
+
+@media only screen and (min-width: 701px) {
+    body {
+        background-color: rgb(245, 237, 227);
+    }
+}
+
 a {
     color: rgb(23, 122, 23);
     font-weight: bolder;
 }
 
 a:hover {
-    font-size: 1.5rem;
+    font-size: 1.3em;
 }
 
 a:active {
