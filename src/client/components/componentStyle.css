@@ -54,7 +54,8 @@
     width: 50%;
 }
 
-ol {
+ol,
+ul {
     list-style-type: none;
 }
 
