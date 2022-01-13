@@ -111,7 +111,7 @@ export default function About() {
             <h2 id="contact">
               <a>Contact US</a>
             </h2>
-            <p>Phone: +10 52146325</p>
+            <p>Phone: <a href="tel:+4152635362">Call meal-sharing</a></p>
             <p>Email: <a href="mailto:info@hyfms.com?cc=secondemail@hyfms.com, &bcc=lastemail@hyfms.com&subject=Mail from the User&body=Dear Meal-sharing Team">info@hyfms.com</a></p>
             <p>Address: Lille Elmevej 43 <br/> Valby-2400 </p>
           </div>

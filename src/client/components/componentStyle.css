@@ -90,7 +90,7 @@ ul {
 .title {
     text-transform: uppercase;
     color: brown;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .inputForm {
