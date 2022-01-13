@@ -5,9 +5,9 @@ export default function About() {
   return (
     <>
       <Header />
-      <div className="flex1">
+      <div>
         <div className="flex2">
-          <div className="border">
+          <div className="mealBorder">
             <h2 id="aboutUs">
               <a>About Us</a>
             </h2>
@@ -16,7 +16,7 @@ export default function About() {
               Relations, News andp//#endregion Notifications, Franchise Info.
             </p>
           </div>
-          <div className="border">
+          <div className="mealBorder">
             <h2 id="careers">
               <a>Careers</a>
             </h2>
@@ -24,7 +24,7 @@ export default function About() {
           </div>
         </div>
         <div className="flex2">
-          <div className="border">
+          <div className="mealBorder">
             <h2 id="services">
               <a>Services</a>
             </h2>
@@ -33,7 +33,7 @@ export default function About() {
               Reservation, Family Fun, Rewards.
             </p>
           </div>
-          <div className="border">
+          <div className="mealBorder">
             <h2 id="community">
               <a>Community</a>
             </h2>
@@ -42,7 +42,7 @@ export default function About() {
           </div>
         </div>
         <div className="flex2">
-          <div className="border">
+          <div className="mealBorder">
             <h2 id="contact">
               <a>Contact Us</a>
             </h2>
@@ -51,7 +51,7 @@ export default function About() {
               Asked Questions
             </p>
           </div>
-          <div className="border">
+          <div className="mealBorder">
             <h2 id="accessibility">
               <a>Accessibility</a>
             </h2>
@@ -63,7 +63,7 @@ export default function About() {
           </div>
         </div>
         <div className="flex2">
-          <div className="border">
+          <div className="mealBorder">
             <h2 id="privacy">
               <a>Privacy</a>
             </h2>
@@ -73,7 +73,7 @@ export default function About() {
               laborum
             </p>
           </div>
-          <div className="border">
+          <div className="mealBorder">
             <h2 id="terms">
               <a>Terms & Condotions</a>
             </h2>
@@ -85,7 +85,7 @@ export default function About() {
           </div>
         </div>
         <div className="flex2">
-          <div className="border">
+          <div className="mealBorder">
             <h2 id="personalInfo">
               <a>Do Not Sell My Personal Information</a>
             </h2>
@@ -95,7 +95,7 @@ export default function About() {
               voluptate velit esse cillum dolore eu.
             </p>
           </div>
-          <div className="border">
+          <div className="mealBorder">
             <h2 id="cookie">
               <a>Cookie Settings</a>
             </h2>
@@ -107,15 +107,15 @@ export default function About() {
           </div>
         </div>
         <div className="flex2">
-          <div className="border">
+          <div className="mealBorder">
             <h2 id="contact">
               <a>Contact US</a>
             </h2>
             <p>Phone: +10 52146325</p>
-            <p>Email: meal_sharing@dj.com</p>
+            <p>Email: <a href="mailto:info@hyfms.com?cc=secondemail@hyfms.com, &bcc=lastemail@hyfms.com&subject=Mail from the User&body=Dear Meal-sharing Team">info@hyfms.com</a></p>
             <p>Address: Lille Elmevej 43 <br/> Valby-2400 </p>
           </div>
-          <div className="border">
+          <div className="mealBorder">
             <h2 id="location">
               <a>Location</a>
             </h2>

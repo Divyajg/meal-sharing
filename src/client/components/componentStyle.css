@@ -3,22 +3,46 @@
     padding: 10px;
 }
 
-header,
-nav,
-footer {
-    padding: 1em;
+.dropbtn {
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: max-content;
+    z-index: 1;
+}
+
+.dropdown-content ul {
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: row;
 }
 
 .flex2 {
     flex-basis: 100%;
     display: flex;
-    flex-direction: row nowrap;
+    flex-direction: row wrap;
     margin: 1em;
 }
 
 .logo {
     border-radius: 5px;
-    padding: 0;
 }
 
 .border {
@@ -37,10 +61,13 @@ ol {
 .mealBorder {
     border: 1px solid brown;
     margin: 2em;
+    background-color: whitesmoke;
+    text-align: center;
+    width: 90%;
 }
 
 .boldFont {
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .header {
@@ -50,7 +77,6 @@ ol {
 }
 
 .style1 {
-    padding: 0;
     border: none;
     border-top: medium solid #333;
     color: #333;
@@ -67,13 +93,7 @@ ol {
 }
 
 .inputForm {
-    text-align: right;
-    margin-right: 20%;
-}
-
-.inputFormReserve {
-    text-align: right;
-    margin-right: 10%;
+    text-align: center;
 }
 
 .centerAlign {
@@ -86,8 +106,10 @@ ol {
 }
 
 #caption {
-    font-size: 0.5em;
+    font-size: 1.3em;
     text-transform: capitalize;
+    text-align: center;
+    color: rgb(71, 70, 70);
 }
 
 .capitalize {
@@ -102,7 +124,6 @@ ul {
 }
 
 .style2 {
-    padding: 0;
     border: none;
     border-top: 2px solid rgb(145, 141, 141);
     color: #333;
@@ -123,6 +144,11 @@ ul {
 footer>ul {
     display: flex;
     justify-content: space-between;
+}
+
+.mealButtons {
+    display: flex;
+    justify-content: space-around;
 }
 
 nav>ul {
@@ -152,13 +178,9 @@ nav>ul {
     font-weight: lighter;
 }
 
-.padding {
-    margin-left: 2em;
-}
-
 .meals {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 button {
@@ -166,18 +188,18 @@ button {
 }
 
 button,
-input {
+input,
+select {
     border-radius: 1em;
     margin: 1.2em;
 }
 
 @media only screen and (max-width: 700px) {
-    .header,
     .aboutPage {
         display: block;
         text-align: center;
     }
-    .homePage>nav>ul {
+    .header>nav>ul {
         display: block;
         text-align: center;
     }
@@ -188,6 +210,11 @@ input {
     }
     body {
         background-color: rgb(232, 243, 217);
+        font-size: 0.9em;
+    }
+    .header>img,
+    h1 {
+        font-size: 0.9em;
     }
     .flex2 {
         display: flex;
@@ -226,5 +253,5 @@ a:hover {
 }
 
 a:active {
-    text-decoration: underline red;
+    color: brown;
 }

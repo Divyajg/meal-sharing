@@ -52,13 +52,15 @@ function ContextProvider({ children }) {
     }
     return meal;
   }) 
-console.log(newMeals);
-console.log(availableReservations);
+
+  const upcomingMeals=newMeals.filter((meal) => Date.parse(meal.when_date) >= Date.parse(new Date()));
+
   return (
     <DataContext.Provider
       value={{
         meals,
         newMeals,
+        upcomingMeals,
         reviews,
         reservations,
         availableReservations,

@@ -10,7 +10,6 @@ export default function AddMeal() {
   const [When, setWhen] = useState("");
   const [reservations, setReservations] = useState("");
   const [price, setPrice] = useState("");
-  const [date, setDate] = useState("");
 
   function newMeal() {
     {
@@ -26,7 +25,7 @@ export default function AddMeal() {
             When_date: When,
             max_reservations: reservations,
             price: price,
-            created_date: date,
+            created_date: new Date(),
           }),
         })
           .catch((e) => {
@@ -115,18 +114,6 @@ export default function AddMeal() {
             required
           />{" "}
         </label>{" "}
-        <br />
-        <label>
-          Created On:{" "}
-          <input
-            onChange={(e) => setDate(e.target.value)}
-            className="addMargin"
-            type="date"
-            defaultValue={"yyyy-mm-dd"}
-            placeholder="Date"
-            required
-          />{" "}
-        </label>
         <br />
         <button className="button_add" onClick={newMeal}>
           {" "}

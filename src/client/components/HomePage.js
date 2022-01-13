@@ -9,24 +9,10 @@ function HomePage() {
   return (
     <div className="homePage">
       <Header />
-        <nav>
-          <ul>
-            <li className="upperCase">
-              <Link to="/about">About</Link>
-            </li>
-            <li className="upperCase">
-            <Link to="/meals">Meals</Link>
-            </li>
-            <li className="upperCase">
-            <Link to="/reservations">reservations</Link>
-            </li>
-            <li className="upperCase">
-            <Link to="/reviews">reviews</Link>
-            </li>
-            
-          </ul>
-        </nav>
-     
+        
+      <h3 id="caption">
+            An exclusive place where food is an emotion.
+          </h3>
 
       <section>
         <img

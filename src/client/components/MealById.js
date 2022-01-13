@@ -3,16 +3,16 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { useParams } from "react-router-dom";
 import DataContext from "./DataContext";
+import { Link } from "react-router-dom";
 
 export default function MealById() {
-  const { newMeals } = useContext(DataContext);
+  const { newMeals, reviews } = useContext(DataContext);
   const { id } = useParams();
   const [inputState, setInputstate] = useState(false);
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [numberOfGuests, setNumberOfGuests] = useState("");
   const [email, setEmail] = useState("");
-  //const [date, setDate] = useState("");
 
   function newReservation() {
     {
@@ -27,7 +27,6 @@ export default function MealById() {
             contact_email: email,
             meal_id: id,
             number_of_guests: numberOfGuests,
-            //created_date: date,
           }),
         })
           .catch((e) => {
@@ -43,89 +42,116 @@ export default function MealById() {
   }
   const mealById = newMeals.find((meal) => meal.id === parseInt(id));
   console.log({mealById});
+  const reviewsById = reviews.filter(
+    (review) => review.meal_id === parseInt(id)
+  );
+  function reviewStars(stars) {
+    if (parseInt(stars) === 1) {
+      return <span>⭐</span>;
+    } else if (parseInt(stars) === 2) {
+      return <span>⭐⭐</span>;
+    } else if (parseInt(stars) === 3) {
+      return <span>⭐⭐⭐</span>;
+    } else if (parseInt(stars) === 4) {
+      return <span>⭐⭐⭐⭐</span>;
+    } else if (parseInt(stars) === 5) {
+      return <span>⭐⭐⭐⭐⭐</span>;
+    }
+  }
   return (
     <div>
       <Header />
       <div>
-      <h1>Meal with id: {id}</h1>
-
-     
         {!mealById ? (
           <h4>No Meals available</h4>
         ) : (
-              <h4 key={mealById.id}  className="mealBorder">
-               <span> Meal: </span>{mealById.title} <br />
-               <span>Meal Described: </span>{mealById.description} <br />
-               <span>Event on: {mealById.when_date} </span><br />
-               <span>Meal Price: {mealById.price} </span><br />
-               <span>Available Seats: {mealById.availableSeats} </span><br />
-              </h4>
+          <p key={mealById.id} className="mealBorder">
+            <span className="boldFont">{mealById.title} </span> <br />
+            {mealById.description} <br />
+            Event On {mealById.when_date} <br />
+            {mealById.price} DKK <br />
+            Available {mealById.availableSeats} <br />
+          </p>
         )}
+<div className="flex2">
+        <ol className="centerAlign border">
+          {reviewsById.length === 0 ? (
+            <li className="boldFont">
+              Be the first one to Review{" "}
+              <Link to={`/reviews/${id}`}>
+                      <button>Add Review</button>
+                    </Link>
+            </li>
+          ) : (
+            <div>
+              <h4>Reviews</h4>
+              {reviewsById.map((review) => {
+                return (
+                  <li key={review.id}>
+                    <span className="boldFont"> {review.stars}</span>{" "}
+                    {reviewStars(review.stars)} <br />
+                    {review.title} <br />
+                    {review.description} <br />
+                  </li>
+                );
+              })}
+            </div>
+          )}
+        </ol>
+
+        <div className="inputForm border">
+          
+            <input
+              onChange={(e) => setName(e.target.value)}
+              className="addMargin"
+              type="text"
+              defaultValue={""}
+              placeholder="Name"
+              required
+            />{" "}
+          
+          <br />
+          
+            <input
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              className="addMargin"
+              type="int"
+              defaultValue={""}
+              placeholder="Phone number"
+              required
+            />{" "}
+          
+          <br />
+          
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              className="addMargin"
+              type="text"
+              defaultValue={""}
+              placeholder="Email@domain.com"
+              required
+            />{" "}
+          
+          <br />
+          
+            <input
+              onChange={(e) => setNumberOfGuests(e.target.value)}
+              className="addMargin"
+              type="int"
+              defaultValue={""}
+              maxLength={mealById.availableSeats}
+              placeholder="Number Of Guests"
+              required
+            />{" "}
+         
+          <br />
+          <button onClick={newReservation}>Submit</button>
+        </div>
+
       
-      <div className="inputForm">
-        <label>
-          Contact Name:{" "}
-          <input
-            onChange={(e) => setName(e.target.value)}
-            className="addMargin"
-            type="text"
-            defaultValue={""}
-            placeholder="Name"
-            required
-          />{" "}
-        </label>{" "}
-        <br />
-        <label>
-          Contact Number:{" "}
-          <input
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            className="addMargin"
-            type="int"
-            defaultValue={""}
-            placeholder="Phone number"
-            required
-          />{" "}
-        </label>{" "}
-        <br />
-        <label>
-          Contact Email:{" "}
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            className="addMargin"
-            type="text"
-            defaultValue={""}
-            placeholder="Email@domain.com"
-            required
-          />{" "}
-        </label>{" "}
-        <br />
-        <label>
-          Number Of Guests:
-          <input
-            onChange={(e) => setNumberOfGuests(e.target.value)}
-            className="addMargin"
-            type="int"
-            defaultValue={""}
-            placeholder="Max available"
-            required
-          />{" "}
-        </label>{" "}
-        <br />
-        {/* <label>
-          Reserve On:{" "}
-          <input
-            onChange={(e) => setDate(e.target.value)}
-            className="addMargin"
-            type="date"
-            defaultValue={"yyyy-mm-dd"}
-            placeholder="Date"
-            required
-          />{" "}
-        </label> */}
-        <br />
-        <button onClick={newReservation}>Submit</button>
-      </div>
-      </div>
+      
+        </div>
+        </div>
       <Footer />
     </div>
   );

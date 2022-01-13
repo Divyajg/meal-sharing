@@ -1,14 +1,15 @@
 import React, { useState, useContext } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import DataContext from "./DataContext";
 
 export default function AddReview() {
+  const { upcomingMeals } = useContext(DataContext);
   const [inputState, setInputstate] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [mealId, setMealId] = useState("");
   const [stars, setStars] = useState("");
-  const [date, setDate] = useState("");
   function newReview() {
     {
       if (title !== "") {
@@ -21,17 +22,17 @@ export default function AddReview() {
             description: description,
             meal_id: mealId,
             stars: stars,
-            created_date: date,
+            created_date: new Date(),
           }),
         })
-          .catch((e) => {
-            setError(e);
-            alert("please enter the required details");
-          })
-          .finally(() => {
-            setInputstate(false);
-            alert("Thank you for the Review.");
-          });
+        .catch((e) => {
+          setError(e);
+          alert("please enter the Valid details");
+        })
+        .finally(() => {
+          setInputstate(false);
+          alert("Thank you for your review");
+        });
       }
     }
   }
@@ -39,9 +40,9 @@ export default function AddReview() {
   return (
     <div>
       <Header />
+      <p id="inputResult"></p>
       <div className="inputForm">
-        <label>
-          Title:{" "}
+       
           <input
             onChange={(e) => setTitle(e.target.value)}
             className="addMargin"
@@ -50,10 +51,8 @@ export default function AddReview() {
             placeholder="Title"
             required
           />{" "}
-        </label>{" "}
         <br />
-        <label>
-          Description:{" "}
+      
           <input
             onChange={(e) => setDescription(e.target.value)}
             className="addMargin"
@@ -62,22 +61,17 @@ export default function AddReview() {
             placeholder="Description"
             required
           />{" "}
-        </label>{" "}
+        
         <br />
-        <label>
-          Meal ID:{" "}
-          <input
-            onChange={(e) => setMealId(e.target.value)}
-            className="addMargin"
-            type="text"
-            defaultValue={""}
-            placeholder="meal id"
-            required
-          />{" "}
-        </label>{" "}
+        <select name={mealId} className="addMargin">
+              {upcomingMeals.map((meal) => (
+                <option key={meal.id} value={meal.id}>
+                  {meal.title}
+                </option>
+              ))}
+            </select>
         <br />
-        <label>
-          Stars:
+        
           <input
             onChange={(e) => setStars(e.target.value)}
             className="addMargin"
@@ -86,19 +80,7 @@ export default function AddReview() {
             placeholder="stars out of 5"
             required
           />{" "}
-        </label>{" "}
-        <br />
-        <label>
-          Created Date:{" "}
-          <input
-            onChange={(e) => setDate(e.target.value)}
-            className="addMargin"
-            type="date"
-            defaultValue={"yyyy-mm-dd"}
-            placeholder="Date"
-            required
-          />{" "}
-        </label>
+        
         <br />
         <button onClick={newReview}>Submit</button>
       </div>

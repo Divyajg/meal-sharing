@@ -5,7 +5,7 @@ import DataContext from "./DataContext";
 import { Link } from "react-router-dom";
 
 export default function Meals() {
-  const { upcomingMeals, loading, error } = useContext(DataContext);
+  const { meals, loading, error } = useContext(DataContext);
 
   if (loading) return <h3>Loading...</h3>;
   if (error) return <p>{error}</p>;
@@ -15,10 +15,10 @@ export default function Meals() {
       <Header />
       <div className="centerAlign">
         <ol>
-          {!upcomingMeals || upcomingMeals.length === 0 ? (
+          {!meals || meals.length === 0 ? (
             <li>No Meals</li>
           ) : (
-            upcomingMeals.map((meal) => {
+            meals.map((meal) => {
               return (
                 <div className="mealBorder">
                   <li key={meal.id} className="boldFont">
@@ -27,18 +27,6 @@ export default function Meals() {
                   <li>{meal.description}</li>
                   <li>{meal.price} DKK</li>
                   <li>Event on: {meal.when_date.slice(0, 10)}</li>
-                  <li>
-                    Available{" "}
-                    <span className="boldFont">{meal.availableSeats}</span>
-                  </li>
-                  <li className="mealButtons">
-                    <Link to={`/meals/${meal.id}`}>
-                      <button>Click to reserve this meal</button>{" "}
-                    </Link>
-                    <Link to={`/reviews/${meal.id}`}>
-                      <button>Add Review</button>
-                    </Link>
-                  </li>
                 </div>
               );
             })
