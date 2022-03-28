@@ -17,8 +17,8 @@ export default function Reservations() {
   const [mealId, setMealId] = useState("");
 
   function newReservation() {
-    if (email !== "") {
-      setInputstate(true);
+    
+      setInputstate(!inputState);
       fetch("/api/reservations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -31,15 +31,15 @@ export default function Reservations() {
           created_date: new Date(),
         }),
       })
-        .catch((e) => {
-          setError(e);
+        .catch((event) => {
+          setError(event);
           alert("please enter the Valid details");
         })
         .finally(() => {
-          setInputstate(false);
+          setInputstate(!inputState);
           alert("Your Reservation has been saved. Enjoy the Experience.");
         });
-    }
+    
   }
 
   const upcomingReservations = reservations.filter((reservation) => {
@@ -54,15 +54,16 @@ console.log({upcomingReservations});
     <div>
       <Header />
       <h4>
-        Please provide your reservation ID and a valid 🆔 proof on Event.{" "}
+        Please provide your reservation ID and a valid 🆔 proof on Event.
       </h4>
       
         
         <div className="mealBorder">
           <p className="boldFont centerAlign">
-            Reserve your meal and space here ⏬{" "}
+            Reserve your meal and space here ⏬
           </p>
           <div className="inputForm">
+            <form>
             <input
               onChange={(e) => setName(e.target.value)}
               className="addMargin"
@@ -70,7 +71,7 @@ console.log({upcomingReservations});
               defaultValue={""}
               placeholder="Name"
               required
-            />{" "}
+            />
             <br />
             <input
               onChange={(e) => setPhoneNumber(e.target.value)}
@@ -79,7 +80,7 @@ console.log({upcomingReservations});
               defaultValue={""}
               placeholder="Phone"
               required
-            />{" "}
+            />
             <br />
             <input
               onChange={(e) => setEmail(e.target.value)}
@@ -88,7 +89,7 @@ console.log({upcomingReservations});
               defaultValue={""}
               placeholder="Email@domain.com"
               required
-            />{" "}
+            />
             <br />
             <select name={mealId} className="addMargin">
               {upcomingMeals.map((meal) => (
@@ -102,14 +103,15 @@ console.log({upcomingReservations});
               onChange={(e) => setNumberOfGuests(e.target.value)}
               className="addMargin"
               type="int"
-              defaultValue={""}
+              defaultValue="1"
               placeholder="Number Of Guests"
               required
-            />{" "}
+            />
             <br />
-            <button onClick={newReservation} className="centerAlign">
+            <button type="submit" className="centerAlign">
               Submit
             </button>
+            </form>
           </div>
         </div>
      
