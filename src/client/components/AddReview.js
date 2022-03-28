@@ -11,30 +11,26 @@ export default function AddReview() {
   const [mealId, setMealId] = useState("");
   const [stars, setStars] = useState("");
   function newReview() {
-    {
-      if (title !== "") {
-        setInputstate(true);
-        fetch("/api/reviews", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            title: title,
-            description: description,
-            meal_id: mealId,
-            stars: stars,
-            created_date: new Date(),
-          }),
-        })
-        .catch((e) => {
-          setError(e);
-          alert("please enter the Valid details");
-        })
-        .finally(() => {
-          setInputstate(false);
-          alert("Thank you for your review");
-        });
-      }
-    }
+    setInputstate(!inputState);
+    fetch("/api/reviews", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: title,
+        description: description,
+        meal_id: mealId,
+        stars: stars,
+        created_date: new Date(),
+      }),
+    })
+      .catch((e) => {
+        setError(e);
+        alert("please enter the Valid details");
+      })
+      .finally(() => {
+        setInputstate(!inputState);
+        alert("Thank you for your review");
+      });
   }
 
   return (
@@ -42,7 +38,7 @@ export default function AddReview() {
       <Header />
       <p id="inputResult"></p>
       <div className="inputForm">
-       
+        <form onSubmit={newReview}>
           <input
             onChange={(e) => setTitle(e.target.value)}
             className="addMargin"
@@ -50,9 +46,9 @@ export default function AddReview() {
             defaultValue={""}
             placeholder="Title"
             required
-          />{" "}
-        <br />
-      
+          />
+          <br />
+
           <input
             onChange={(e) => setDescription(e.target.value)}
             className="addMargin"
@@ -60,18 +56,18 @@ export default function AddReview() {
             defaultValue={""}
             placeholder="Description"
             required
-          />{" "}
-        
-        <br />
-        <select name={mealId} className="addMargin">
-              {upcomingMeals.map((meal) => (
-                <option key={meal.id} value={meal.id}>
-                  {meal.title}
-                </option>
-              ))}
-            </select>
-        <br />
-        
+          />
+
+          <br />
+          <select name={mealId} className="addMargin">
+            {upcomingMeals.map((meal) => (
+              <option key={meal.id} value={meal.id}>
+                {meal.title}
+              </option>
+            ))}
+          </select>
+          <br />
+
           <input
             onChange={(e) => setStars(e.target.value)}
             className="addMargin"
@@ -79,10 +75,11 @@ export default function AddReview() {
             defaultValue={""}
             placeholder="stars out of 5"
             required
-          />{" "}
-        
-        <br />
-        <button onClick={newReview}>Submit</button>
+          />
+
+          <br />
+          <button type="submit">Submit</button>
+        </form>
       </div>
       <Footer />
     </div>
