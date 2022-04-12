@@ -3,51 +3,114 @@
     padding: 10px;
 }
 
-header,
-nav,
-footer {
-    padding: 1em;
+.dropbtn {
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: max-content;
+    z-index: 1;
+}
+
+.dropdown-content ul {
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex2 {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row wrap;
+    margin: 1em;
 }
 
 .logo {
-    border-radius: 15px;
-    border: 5px solid rgb(81, 81, 83);
-    padding: 0;
+    border-radius: 5px;
 }
 
-header {
-    color: rgb(54, 161, 40);
+.border {
+    border: 1px solid brown;
+    border-radius: 1em;
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+.mealBorder {
+    border: 1px solid brown;
+    margin: 2em;
+    background-color: whitesmoke;
+    text-align: center;
+    width: 90%;
+}
+
+.boldFont {
+    font-weight: bolder;
+}
+
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.mealsHeader {
-    justify-content: space-around;
-}
-
-hr.style1 {
-    padding: 0;
+.style1 {
     border: none;
     border-top: medium solid #333;
     color: #333;
     text-align: center;
+    width: 100%;
 }
 
 .upperCase,
-#title {
+#title,
+.title {
     text-transform: uppercase;
+    color: brown;
+    font-weight: bolder;
+}
+
+.inputForm {
+    text-align: center;
+}
+
+.centerAlign {
+    text-align: center;
 }
 
 #title {
     font-size: 2em;
     text-align: center;
-    color: brown;
 }
 
 #caption {
-    font-size: 0.5em;
+    font-size: 1.3em;
     text-transform: capitalize;
+    text-align: center;
+    color: rgb(71, 70, 70);
 }
 
 .capitalize {
@@ -61,19 +124,39 @@ ul {
     justify-content: flex-end;
 }
 
-hr.style2 {
-    padding: 0;
+.style2 {
     border: none;
     border-top: 2px solid rgb(145, 141, 141);
     color: #333;
     text-align: center;
 }
 
-footer>ul,
+.border {
+    width: 80%;
+}
+
+.socialMedia>ul {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+footer>ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mealButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
 nav>ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    font-size: 1.3rem;
 }
 
 .aboutPage {
@@ -81,6 +164,11 @@ nav>ul {
     flex-direction: row;
     justify-content: space-between;
     text-transform: capitalize;
+}
+
+.listBlock {
+    margin: 1em;
+    display: flex;
 }
 
 .aboutPage>ul {
@@ -96,10 +184,75 @@ nav>ul {
     flex-direction: column;
 }
 
+button {
+    background-color: rgb(243, 220, 201);
+}
+
+button,
+input,
+select {
+    border-radius: 1em;
+    margin: 1.2em;
+}
+
+@media only screen and (max-width: 700px) {
+    .aboutPage {
+        display: block;
+        text-align: center;
+    }
+    .header>nav>ul {
+        display: block;
+        text-align: center;
+    }
+    .socialMedia>ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    body {
+        background-color: rgb(232, 243, 217);
+        font-size: 0.9em;
+    }
+    .header>img,
+    h1 {
+        font-size: 0.9em;
+    }
+    .flex2 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .inputForm {
+        text-align: left;
+    }
+    .inputFormReserve {
+        text-align: left;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .inputFormReserve {
+        text-align: left;
+        margin: 4% 0 10% 0;
+    }
+}
+
+@media only screen and (min-width: 701px) {
+    body {
+        background-color: rgb(245, 237, 227);
+    }
+}
+
+a {
+    color: rgb(23, 122, 23);
+    font-weight: bolder;
+}
+
 a:hover {
-    font-size: 1.5rem;
+    font-size: 1.3em;
 }
 
 a:active {
-    text-decoration: underline red;
+    color: brown;
 }
